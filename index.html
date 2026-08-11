@@ -462,7 +462,7 @@ footer {
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo">解<span>智</span>博</div>
+  <div class="nav-logo">解<span>智</span>博 <span style="font-size:11px;font-weight:400;color:var(--purple-l);letter-spacing:0.02em;">FDE</span></div>
   <div class="nav-links">
     <a href="#about">关于</a>
     <a href="#projects">项目</a>
@@ -473,7 +473,7 @@ footer {
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-eyebrow">● AI Agent 开发者 & 产品经理</div>
+  <div class="hero-eyebrow">● AI 应用工程师 / Forward Deployed Engineer (FDE)</div>
   <h1 class="hero-name">解智博</h1>
   <p class="hero-name-en">JIE ZHIBO · AI ENGINEER & PM</p>
   <div class="hero-divider"></div>
@@ -512,8 +512,8 @@ footer {
   <h2 class="sec-title reveal">关于我</h2>
   <div class="about-grid">
     <div class="about-text reveal d1">
-      <p>我是一名 <strong>AI Agent 开发者 & AI 产品经理</strong>，毕业于燕京理工学院数据科学与大数据技术专业，目前就职于<strong>北京小希教育科技有限公司</strong>。善用 AI 编程工具实现全栈独立交付——从算法、工作流到前端交互，无需依赖团队协作即可完整落地。</p>
-      <p>针对不同业务场景设计<strong>差异化检索架构</strong>：智能定校系统采用结构化数据检索结合推荐算法实现精准条件筛选；AI 咨询助手采用 RAG 向量检索提升非结构化知识问答能力。定校系统月均 <strong>2000+ 次</strong>，咨询助手月均 <strong>20000+ 次</strong>真实用户调用，知识库覆盖 <strong>800+ 院校、上万专业</strong>。</p>
+      <p>我是一名 <strong>AI 应用工程师 / Forward Deployed Engineer（FDE）</strong>，毕业于燕京理工学院数据科学与大数据技术专业，目前就职于<strong>北京小希教育科技有限公司</strong>。作为产品与 AI 开发一体的 FDE，直接对接业务支持团队的前线反馈，将用户真实问题转化为 AI 系统迭代，紧急问题当天上线，逻辑调整平均 3 天。</p>
+      <p>擅长根据业务数据特征选择技术方案：结构化业务场景采用<strong>结构化检索 + 推荐算法</strong>实现精准匹配，非结构化知识问答场景采用 <strong>RAG 向量检索</strong>提升召回质量。技术判断原则：不用 AI 解决所有问题，能识别哪些场景适合模型判断、哪些适合确定性代码。</p>
       <p>我相信 <strong>技术和产品是同一件事的两面</strong>——能写代码，才真正理解系统边界；懂业务，AI 才真正解决问题。</p>
       <div class="about-hls">
         <div class="ahl">
@@ -522,7 +522,7 @@ footer {
         </div>
         <div class="ahl">
           <div class="ahl-dot" style="background:var(--teal)"></div>
-          <span class="ahl-text"><strong>RAG 差异化架构</strong>：结构化检索 + 向量检索分场景设计，多路召回 + Rerank 优化</span>
+          <span class="ahl-text"><strong>业务技术桥接</strong>：理解业务需求，转化为 AI 方案，推动研发与业务团队协同落地</span>
         </div>
         <div class="ahl">
           <div class="ahl-dot" style="background:#2D62B0"></div>
@@ -589,7 +589,7 @@ footer {
         <span class="proj-ver">v2.0 → v4.4</span>
       </div>
       <div class="proj-name">智能定校系统</div>
-      <div class="proj-sub">基于 <strong>Coze 工作流 + 语义向量匹配</strong>的 AI 院校推荐智能体，覆盖硕士 / 本科 / 预科三类申请场景，独立主导全版本迭代。</div>
+      <div class="proj-sub">面向留学申请场景的 AI 智能推荐系统，解决传统人工定校效率低、依赖顾问经验的问题。通过 LLM Agent Workflow、结构化检索与推荐排序，实现从学生需求理解到方案生成的自动化，月均服务真实用户 2000+ 次。</div>
       <div class="proj-body">
         <div>
           <div class="proj-metrics">
@@ -607,10 +607,10 @@ footer {
         </div>
         <div>
           <ul class="pbul">
-            <li><strong>差异化检索架构</strong>：结构化数据检索 + 推荐算法实现精准条件筛选，LLM 负责语义理解与专业匹配，代码处理确定性规则逻辑</li>
-            <li><strong>推荐算法</strong>：院校评分（QS 排名 + 申请热度 + 合作资源）× 专业评分（热度 + 业务先验）综合排序</li>
-            <li>知识库覆盖 <strong>800+ 院校、上万专业</strong>，解决多语言专业名称不对齐问题</li>
-            <li>响应时间从 70–100 秒优化至 <strong>40–50 秒</strong>，主导 10+ 版本迭代</li>
+            <li><strong>架构设计</strong>：院校定校场景采用结构化检索 + 推荐排序保证结果可控；LLM 负责需求理解和专业语义匹配，代码与后端处理规则计算与排序逻辑</li>
+            <li><strong>推荐排序优化</strong>：融合 QS 排名、申请热度、合作资源、专业热度等多因素指标，提高推荐结果与业务需求匹配度</li>
+            <li>知识库覆盖 <strong>800+ 院校、上万专业</strong>；追问触发改为代码字段检测，准确率提升至 <strong>100%</strong></li>
+            <li>基于业务反馈推动 <strong>10+ 版本迭代</strong>，响应时间从 70–100 秒优化至 40–50 秒</li>
           </ul>
         </div>
       </div>
@@ -683,7 +683,7 @@ footer {
         <div class="exp-co" style="font-size:14px;">北京小希教育科技有限公司</div>
         <span class="exp-period">2025 — 至今</span>
       </div>
-      <div class="exp-role">Agent 智能体开发 / AI 产品经理</div>
+      <div class="exp-role">Forward Deployed Engineer（FDE）</div>
       <div class="exp-bar"></div>
       <ul class="exp-ul">
         <li>独立主导<strong>智能定校系统</strong> v2→v4.4，月均 2000+ 次调用</li>
