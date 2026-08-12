@@ -38,6 +38,18 @@ body {
 }
 
 /* ── CURSOR ── */
+/* ── Scroll Progress Bar ── */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  z-index: 200; background: transparent; pointer-events: none;
+}
+#scroll-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--purple), var(--teal-light));
+  transition: width 0.05s linear;
+  box-shadow: 0 0 8px rgba(107,95,212,0.6);
+}
+
 .cursor {
   width: 7px; height: 7px; background: var(--purple);
   border-radius: 50%; position: fixed; pointer-events: none;
@@ -461,6 +473,9 @@ footer {
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAV -->
+<!-- Scroll Progress Bar -->
+<div id="scroll-progress"><div id="scroll-fill"></div></div>
+
 <nav id="nav">
   <div class="nav-logo">解<span>智</span>博 <span style="font-size:11px;font-weight:400;color:var(--purple-l);letter-spacing:0.02em;">FDE</span></div>
   <div class="nav-links">
@@ -479,19 +494,19 @@ footer {
   <div class="hero-divider"></div>
   <p class="hero-sub">专注 AI Agent 智能体开发与大模型应用落地，针对不同业务场景设计差异化检索架构，在留学科技赛道主导多个生产级 AI 系统从 0 到上线。定校系统月均 2000+ 次，咨询助手月均 20000+ 次调用。</p>
   <div class="hero-stats">
-    <div class="stat-box">
+    <div class="stat-box reveal-scale">
       <div class="stat-num" data-count="20000" data-suffix="+">0</div>
       <div class="stat-label">咨询助手月均调用</div>
     </div>
-    <div class="stat-box">
+    <div class="stat-box reveal-scale">
       <div class="stat-num" data-count="2000" data-suffix="+">0</div>
       <div class="stat-label">定校系统月均调用</div>
     </div>
-    <div class="stat-box">
+    <div class="stat-box reveal-scale">
       <div class="stat-num" data-count="800" data-suffix="+">0</div>
       <div class="stat-label">知识库院校覆盖</div>
     </div>
-    <div class="stat-box">
+    <div class="stat-box reveal-scale">
       <div class="stat-num" data-count="10" data-suffix="+">0</div>
       <div class="stat-label">Agent 版本迭代</div>
     </div>
@@ -511,7 +526,7 @@ footer {
   <div class="sec-tag reveal">// 01 · About</div>
   <h2 class="sec-title reveal">关于我</h2>
   <div class="about-grid">
-    <div class="about-text reveal d1">
+    <div class="about-text reveal-left d1">
       <p>我是一名 <strong>AI 应用工程师 / Forward Deployed Engineer（FDE）</strong>，毕业于燕京理工学院数据科学与大数据技术专业，目前就职于<strong>北京小希教育科技有限公司</strong>。作为产品与 AI 开发一体的 FDE，直接对接业务支持团队的前线反馈，将用户真实问题转化为 AI 系统迭代，紧急问题当天上线，逻辑调整平均 3 天。</p>
       <p>擅长根据业务数据特征选择技术方案：结构化业务场景采用<strong>结构化检索 + 推荐算法</strong>实现精准匹配，非结构化知识问答场景采用 <strong>RAG 向量检索</strong>提升召回质量。技术判断原则：不用 AI 解决所有问题，能识别哪些场景适合模型判断、哪些适合确定性代码。</p>
       <p>我相信 <strong>技术和产品是同一件事的两面</strong>——能写代码，才真正理解系统边界；懂业务，AI 才真正解决问题。</p>
@@ -530,7 +545,7 @@ footer {
         </div>
       </div>
     </div>
-    <div class="skill-card reveal d2">
+    <div class="skill-card reveal-right">
       <div class="sk-label">// 技术栈</div>
       <div class="sk-group">
         <div class="sk-group-title">Agent & 工作流</div>
@@ -583,7 +598,7 @@ footer {
   <h2 class="sec-title reveal">核心项目</h2>
   <div class="proj-grid">
 
-    <div class="proj-card featured reveal">
+    <div class="proj-card featured reveal tilt-card" style="position:relative;overflow:hidden;">
       <div class="proj-hdr">
         <div class="proj-icon">🎯</div>
         <span class="proj-ver">v2.0 → v4.4</span>
@@ -616,7 +631,7 @@ footer {
       </div>
     </div>
 
-    <div class="proj-card reveal d1">
+    <div class="proj-card tilt-card reveal-left d1" style="position:relative;overflow:hidden;">
       <div class="proj-hdr">
         <div class="proj-icon" style="background:var(--teal-bg);border-color:rgba(26,143,104,0.15)">💬</div>
         <span class="proj-ver">大模型 v4.0</span>
@@ -634,7 +649,7 @@ footer {
       </div>
     </div>
 
-    <div class="proj-card reveal d2">
+    <div class="proj-card tilt-card reveal-right d1" style="position:relative;overflow:hidden;">
       <div class="proj-hdr">
         <div class="proj-icon" style="background:#EEF4FD;border-color:rgba(45,98,176,0.15)">📚</div>
         <span class="proj-ver">RAG 体系</span>
@@ -652,7 +667,7 @@ footer {
       </div>
     </div>
 
-    <div class="proj-card reveal d1">
+    <div class="proj-card tilt-card reveal-left d1" style="position:relative;overflow:hidden;">
       <div class="proj-hdr">
         <div class="proj-icon" style="background:var(--amber-bg);border-color:rgba(176,125,42,0.15)">⚡</div>
         <span class="proj-ver">调研 + 治理</span>
@@ -678,7 +693,7 @@ footer {
   <div class="sec-tag reveal">// 03 · Experience</div>
   <h2 class="sec-title reveal">工作 & 教育经历</h2>
   <div class="exp-wrap" style="grid-template-columns:1fr 1fr 1fr;">
-    <div class="exp-item reveal d1">
+    <div class="exp-item reveal-left d1">
       <div class="exp-top">
         <div class="exp-co" style="font-size:14px;">北京小希教育科技有限公司</div>
         <span class="exp-period">2025 — 至今</span>
@@ -692,7 +707,7 @@ footer {
         <li>推动 AI 在咨询 / 文档 / 财务多场景横向落地</li>
       </ul>
     </div>
-    <div class="exp-item reveal d2">
+    <div class="exp-item reveal-right d2">
       <div class="exp-top">
         <div class="exp-co" style="font-size:13px;">北京首旅惠联科技有限公司</div>
         <span class="exp-period">2024.10—2025.02</span>
@@ -706,7 +721,7 @@ footer {
         <li>构建 QA 知识图谱（Neo4j），弹幕<strong>自动应答率 92%</strong>；月 GMV <strong>30 万+</strong></li>
       </ul>
     </div>
-    <div class="exp-item reveal d3">
+    <div class="exp-item reveal-right d3">
       <div class="exp-top">
         <div class="exp-co">燕京理工学院</div>
         <span class="exp-period">2021 — 2025</span>
@@ -725,7 +740,7 @@ footer {
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec-tag reveal">// 04 · Contact</div>
-  <div class="contact-big reveal d1">有想法？<br>一起<span>聊聊</span></div>
+  <div class="contact-big reveal-scale d1">有想法？<br>一起<span>聊聊</span></div>
   <p class="contact-sub reveal d2">无论是 AI 产品合作、技术探讨，还是工作机会，欢迎联系</p>
   <div class="contact-row reveal d3">
     <a href="tel:13023127510" class="c-card">
@@ -746,7 +761,15 @@ footer {
 </footer>
 
 <script>
-// Cursor
+// ── Scroll Progress Bar ──
+function updateProgress() {
+  const s = window.scrollY;
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('scroll-fill').style.width = (s / h * 100) + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+// ── Cursor ──
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
@@ -766,11 +789,20 @@ document.querySelectorAll('a,button,.proj-card,.ahl,.exp-item').forEach(el=>{
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
 
-// Reveal
-const ro=new IntersectionObserver(es=>{
-  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); ro.unobserve(e.target); } });
-},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+// Reveal - all variants
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      ro.unobserve(e.target);
+      // Animate skill bars inside revealed elements
+      e.target.querySelectorAll('.skill-bar-fill[data-w]').forEach(bar => {
+        setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, 100);
+      });
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => ro.observe(el));
 
 // Counter
 function count(el,target,suffix){
@@ -780,15 +812,64 @@ function count(el,target,suffix){
     else el.textContent=Math.floor(v)+suffix;
   },16);
 }
-const co=new IntersectionObserver(es=>{
-  es.forEach(e=>{
-    if(e.isIntersecting){
-      count(e.target, +e.target.dataset.count, e.target.dataset.suffix||'');
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      count(e.target, +e.target.dataset.count, e.target.dataset.suffix || '');
       co.unobserve(e.target);
     }
   });
-},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => co.observe(el));
+
+// ── 3D Tilt on all tilt-card elements ──
+document.querySelectorAll('.tilt-card').forEach(card => {
+  // Add shine overlay
+  const shine = document.createElement('div');
+  shine.className = 'tilt-shine';
+  card.appendChild(shine);
+
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 10}deg) scale(1.025) translateZ(0)`;
+    card.style.boxShadow = `${x * -12}px ${y * -12}px 32px rgba(107,95,212,0.18)`;
+    const px = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+    const py = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+    shine.style.opacity = '1';
+    shine.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(107,95,212,0.14) 0%, transparent 65%)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.boxShadow = '';
+    shine.style.opacity = '0';
+  });
+});
+
+// ── Parallax on hero name ──
+const heroName = document.querySelector('.hero-name');
+const heroDivider = document.querySelector('.hero-divider');
+if (heroName) {
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    heroName.style.transform = `translateY(${y * 0.18}px)`;
+    if (heroDivider) heroDivider.style.transform = `translateY(${y * 0.1}px)`;
+  }, { passive: true });
+}
+
+// ── Magnetic effect on buttons ──
+document.querySelectorAll('.btn-primary, .btn-ghost, .c-card').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const x = (e.clientX - r.left - r.width / 2) * 0.25;
+    const y = (e.clientY - r.top - r.height / 2) * 0.25;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+  });
+});
 </script>
 </body>
 </html>
